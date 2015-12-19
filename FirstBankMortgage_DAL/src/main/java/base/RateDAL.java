@@ -1,6 +1,7 @@
 package base;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
@@ -15,14 +16,37 @@ import util.HibernateUtil;
 
 public class RateDAL {
 
-
 	public static double getRate(int GivenCreditScore) {
-		//FinalExam - please implement		
-		// Figure out which row makes sense- return back the 
-		// right interest rate from the table based on the given credit score
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = null;
+		RateDomainModel rateGet = null;		
+		double minrate = 0;
+		try {
+			tx = session.beginTransaction();	
+				
+			Query query = session.createQuery("from RateDomainModel where minCreditScore <= " + GivenCreditScore);
+			
+			List<?> list = query.list(); //each entry is a RateDomainModel
+			
+			minrate = ((RateDomainModel) list.get(0)).getInterestRate();
 		
-		//FinalExam - obviously change the return value
-		return 0;
+			for (int z = 0; z <  list.size(); z++){ //gets the minimum rate you can have
+				
+				if (minrate > ((RateDomainModel) list.get(z)).getInterestRate())
+					minrate = ((RateDomainModel) list.get(z)).getInterestRate();
+				
+			}
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		System.out.println("------------------" + minrate + "--------------");	
+		return minrate;
 	}
 
 }
