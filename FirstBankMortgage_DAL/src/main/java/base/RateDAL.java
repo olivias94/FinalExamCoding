@@ -20,7 +20,7 @@ public class RateDAL {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		RateDomainModel rateGet = null;		
-		double minrate = 0;
+		double lowestrate = 0;
 		try {
 			tx = session.beginTransaction();	
 				
@@ -28,12 +28,12 @@ public class RateDAL {
 			
 			List<?> list = query.list(); //each entry is a RateDomainModel
 			
-			minrate = ((RateDomainModel) list.get(0)).getInterestRate();
+			lowestrate = ((RateDomainModel) list.get(0)).getInterestRate();
 		
 			for (int z = 0; z <  list.size(); z++){ //gets the minimum rate you can have
 				
-				if (minrate > ((RateDomainModel) list.get(z)).getInterestRate())
-					minrate = ((RateDomainModel) list.get(z)).getInterestRate();
+				if (lowestrate > ((RateDomainModel) list.get(z)).getInterestRate())
+					lowestrate = ((RateDomainModel) list.get(z)).getInterestRate();
 				
 			}
 			tx.commit();
