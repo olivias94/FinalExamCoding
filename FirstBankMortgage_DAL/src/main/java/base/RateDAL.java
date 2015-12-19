@@ -16,10 +16,10 @@ import util.HibernateUtil;
 
 public class RateDAL {
 
-	public static double getRate(int GivenCreditScore) {
+	public static double getRate(double GivenCreditScore) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
-		RateDomainModel rateGet = null;		
+		//RateDomainModel rateGet = null;		
 		double lowestrate = 0;
 		try {
 			tx = session.beginTransaction();	
@@ -45,8 +45,8 @@ public class RateDAL {
 			session.close();
 		}
 		
-		System.out.println("------------------" + minrate + "--------------");	
-		return minrate;
+		System.out.println("------------------" + lowestrate + "--------------");	
+		return lowestrate;
 	}
 
 }

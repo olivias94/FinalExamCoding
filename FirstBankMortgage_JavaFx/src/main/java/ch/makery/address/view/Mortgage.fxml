@@ -11,8 +11,8 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@DarkTheme.css">
                <children>
-                  <Label fx:id="mpLabel" layoutX="42.0" layoutY="74.0" prefHeight="59.0" prefWidth="253.0" text="Label" />
-                  <Label fx:id="bLabel" layoutX="42.0" layoutY="240.0" prefHeight="59.0" prefWidth="253.0" text="Label" />
+                  <Label fx:id="mpLabel" layoutX="42.0" layoutY="74.0" prefHeight="59.0" prefWidth="253.0" stylesheets="@DarkTheme.css" />
+                  <Label fx:id="bLabel" layoutX="42.0" layoutY="240.0" prefHeight="59.0" prefWidth="253.0" stylesheets="@DarkTheme.css" />
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@DarkTheme.css">
                <children>
@@ -29,20 +29,20 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField fx:id="creditScoreTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="expensesTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="incomeTextField" GridPane.columnIndex="1" />
-                        <TextField fx:id="houseCostTextField" prefHeight="34.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="incomeLabel" text="Enter Annual Income Here" />
-                        <Label fx:id="expensesLabel" text="Enter Annual Expenses Here" GridPane.rowIndex="1" />
-                        <Label fx:id="creditScoreLabel" text="Enter Credit Score Here" GridPane.rowIndex="2" />
-                        <Label fx:id="houseCostLabel" text="Enter House Cost Here" GridPane.rowIndex="3" />
-                        <Label fx:id="termLabel" text="Choose Term - 15 or 30 years" GridPane.rowIndex="4" />
-                        <TextField fx:id="termTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="creditScoreTextField" stylesheets="@DarkTheme.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="expensesTextField" stylesheets="@DarkTheme.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="incomeTextField" stylesheets="@DarkTheme.css" GridPane.columnIndex="1" />
+                        <TextField fx:id="houseCostTextField" prefHeight="34.0" prefWidth="135.0" stylesheets="@DarkTheme.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="incomeLabel" stylesheets="@DarkTheme.css" text="Enter Annual Income Here" />
+                        <Label fx:id="expensesLabel" stylesheets="@DarkTheme.css" text="Enter Annual Expenses Here" GridPane.rowIndex="1" />
+                        <Label fx:id="creditScoreLabel" stylesheets="@DarkTheme.css" text="Enter Credit Score Here" GridPane.rowIndex="2" />
+                        <Label fx:id="houseCostLabel" stylesheets="@DarkTheme.css" text="Enter House Cost Here" GridPane.rowIndex="3" />
+                        <Label fx:id="termLabel" stylesheets="@DarkTheme.css" text="Choose Term - 15 or 30 years" GridPane.rowIndex="4" />
+                        <TextField fx:id="termTextField" stylesheets="@DarkTheme.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
-                  <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="314.0" text="Mortgage Clculator" />
-                  <Button layoutX="20.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleCalculateMortgage" prefHeight="59.0" prefWidth="193.0" text="Calculate Mortgage" />
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="314.0" stylesheets="@DarkTheme.css" text="Mortgage Clculator" />
+                  <Button layoutX="20.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleCalculateMortgage" prefHeight="59.0" prefWidth="193.0" stylesheets="@DarkTheme.css" text="Calculate Mortgage" />
                </children>
             </AnchorPane>
         </items>

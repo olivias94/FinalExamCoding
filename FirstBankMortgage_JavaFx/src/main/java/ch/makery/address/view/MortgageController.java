@@ -52,6 +52,8 @@ public class MortgageController {
 	private Label mpLabel = new Label();
 	@FXML
 	private Label bLabel = new Label();
+	
+	
 
 
 
@@ -105,7 +107,8 @@ public class MortgageController {
    @FXML
    public void handleCalculateMortgage(){
 	   //ArrayList<Object> mortgage = mortgageCreator();
-	   int cr = Integer.parseInt(creditScoreTextField.getText());
+
+	   double cr = Double.parseDouble(creditScoreTextField.getText());
 	   System.out.println("-------------" + cr + "-----------------");
 	   double t = Double.parseDouble(termTextField.getText());
 	   double hc = Double.parseDouble(houseCostTextField.getText());

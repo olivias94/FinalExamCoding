@@ -10,7 +10,7 @@ import ch.makery.address.view.*;
 
 public class Rate extends RateDomainModel {
 	
-	public static double getPayment(int creditScore, double term, double houseCost)
+	public static double getPayment(double creditScore, double term, double houseCost)
 	{
 		
 		double interestRate = RateDAL.getRate(creditScore);
